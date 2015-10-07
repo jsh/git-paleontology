@@ -1,0 +1,7 @@
+#!/bin/bash -eux
+
+../authors |
+  tail ${1:-} |
+  while read n rest; do
+    ../deltas $rest
+  done
