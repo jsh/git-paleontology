@@ -89,4 +89,4 @@ git shortlog |
   sort -n
 ```
 
-There's been a lot of change. But what did all that change [start from?](https://github.com/jsh/git-paleontology/blob/master/the-ur-git.md)
+There's been a lot of change. But what did all that change [start from?](https://github.com/jsh/git-paleontology/blob/master/building-git/the-ur-git.md)

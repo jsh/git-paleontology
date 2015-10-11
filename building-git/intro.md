@@ -66,4 +66,4 @@ and from  [Wikipedia's timeline for GitHub](https://en.wikipedia.org/wiki/GitHub
 
 **`git`** is at least a defensible choice.
 
-What, then, can we say about [**`git`**'s fossil record?](https://github.com/jsh/git-paleontology/blob/master/basic-stats.md)
+What, then, can we say about [**`git`**'s fossil record?](https://github.com/jsh/git-paleontology/blob/master/building-git/basic-stats.md)
