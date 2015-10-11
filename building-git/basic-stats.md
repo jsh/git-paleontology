@@ -88,3 +88,5 @@ git shortlog |
   perl -lane 'print if s/(.*)\((.*)\):$/\2\t\1/'  |
   sort -n
 ```
+
+There's been a lot of change. But what did all that change [start from?](https://github.com/jsh/git-paleontology/blob/master/the-ur-git.md)
