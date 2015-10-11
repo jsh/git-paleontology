@@ -1,3 +1,0 @@
-#!/bin/bash -eux
-
-git shortlog | perl -lane 'print if s/(.*)\((.*)\):$/\2\t\1/'  | sort -n

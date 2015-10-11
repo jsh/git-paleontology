@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$1" ]; then
+  git -C $1 shortlog
+else
+  git shortlog
+fi | perl -lane 'print if s/(.*)\((.*)\):$/\2\t\1/'  | sort -n

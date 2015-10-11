@@ -1,9 +1,0 @@
-#!/bin/bash -eux
-
-[ -d corpora ] || mkdir corpora
-author="$@"
-corpus=${author// /_}
-corpus=${corpus//./}
-corpus=${corpus,,}.corpus
-git log -p --author="$author" |
-  grep ^[+-] > corpora/$corpus
