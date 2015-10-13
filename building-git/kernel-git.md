@@ -8,14 +8,14 @@ we can go back to Wikipedia, and look at dates again.
 
 *On 16 June Git managed the kernel 2.6.12 release.*
 
-#### The Mississippian -- git diversifies and flourishes
+#### The Mississippian -- **`git`** diversifies and flourishes
 
-How much did git change in two-and-a-half months?
+How much did **`git`** change in two-and-a-half months?
 
 ```bash
 git checkout $(git rev-list -1 --before="June 18 2005" master)
 git log --oneline | wc -l # 749 commits, about 2 a day
-ls # a git command with subcommands!
+ls # a 'git' command with subcommands!
 ls | wc -l # 107 top-level files
 ls Documentation | wc -l # 
 ls t | wc -l # 35 tests
