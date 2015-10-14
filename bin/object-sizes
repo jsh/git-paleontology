@@ -1,0 +1,14 @@
+#!/bin/bash -eu
+
+bucket_width=10000
+cd /tmp
+rm -rf git packfiles
+git clone -q https://github.com/git/git.git
+cd git
+mkdir ../packfiles
+mv .git/objects/pack/* ../packfiles
+git unpack-objects -q < ../packfiles/*.pack
+cd .git/objects
+find . -type f | xargs ls -l | tr -d './' | while read p l o g size m d t name; do echo $(git cat-file -t $name) $size; done
+#find .git/objects -type f | xargs ls -lS | awk '{print $5}' | sort -n > /tmp/object-sizes
+#cat /tmp/object-sizes | while read i; do echo $(($i/$bucket_width)); done | uniq -c
