@@ -1,0 +1,14 @@
+#!/bin/bash -eu
+
+echo week total
+spd=$((24*60*60)) # seconds per day
+spw=$((7*spd))    # per week
+d0=$(git log -1 --date=short --pretty=format:%ct e83c516) # first commit, seconds since epoch
+
+ntot=$(git rev-list master | wc -l) # current commit total
+n=0
+
+for ((wk=0, sec=$d0; n < ntot; wk+=1, sec+=spw)); do
+  n=$(git rev-list master --before=$sec | wc -l)
+  echo $wk $((n-1))
+done
