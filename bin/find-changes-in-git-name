@@ -1,0 +1,28 @@
+#!/bin/bash -eu
+
+# Not quite, but close
+
+find-first-with() {
+  git bisect start HEAD initial -- &>/dev/null
+  if [ -f $1 ]; then
+    git bisect bad
+  else
+    git bisect good
+  fi &>/dev/null
+  first_with=$(git bisect run [ ! -f $1 ] |& awk '/first bad commit/{print $1}')
+  [ -f $1 ] && git checkout -q HEAD^
+  echo $first_with
+}
+  
+
+# initialize state
+git checkout -q master
+git tag -f initial $(git rev-list master | tail -1)
+git tag -f first-git-dot-c $(find-first-with git.c)
+git tag -f first-git-dot-sh $(find-first-with git.sh)
+git tag -f first-git-cmd $(find-first-with git)
+
+for i in initial first-git-cmd first-git-dot-sh first-git-dot-c; do
+  d=$(git log -1 --date=short --pretty=format:%cD $i)
+  echo $i: $d
+done
