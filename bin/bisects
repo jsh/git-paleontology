@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Not quite, but close
+
+git tag initial $(git rev-list master | tail -1)
+git bisect start HEAD initial --
+git bisect run [ ! -f git.c ]
+git tag first-git-dot-c
+git bisect start HEAD initial --
+git bisect run [ ! -f git.sh ]
+git tag first-git-dot-sh
+git bisect start HEAD initial --
+git bisect run [ ! -f git ]
+git log -1 --date=short first-git
+git log -1 --date=short first-git-dot-sh
+git log -1 --date=short first-git-dot-c
