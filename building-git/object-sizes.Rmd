@@ -41,5 +41,3 @@ hist(log(blob$size), , main="Distribution of blob sizes", xlab="log(blob size)")
 ```
 
 Blob sizes have a roughly lognormal distribution.
-
-
