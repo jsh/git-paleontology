@@ -1,8 +1,8 @@
 ## [Software Paleontology](https://prezi.com/8l8fqqyk6pue/software-paleontology/)
 
-1. What shall we study?
+1. Everyone loves Paleontology
 
-1. We have the entire history
+1. We have an entire history
 
   * We can build the first
 
@@ -16,6 +16,6 @@
 
 1. slide 7
 
-1. commands you've seen
+1. Here are commands you've now seen
 
 1. Don't say, "I think ..."
