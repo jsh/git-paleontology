@@ -18,4 +18,4 @@
 
 1. Here are commands you've now seen
 
-1. Don't say, "I think ..."
+1. Science is data-driven: facts, not ["I think" or "It looks like."](https://drive.google.com/file/d/0Bw8rYZUPXcLrUzY2dV9fNTVDZVZrLU9RRTNHcGJ4eWpNR1hr/view?usp=sharing)
