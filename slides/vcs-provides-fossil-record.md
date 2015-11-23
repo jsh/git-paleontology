@@ -22,7 +22,7 @@ work and are recognizable ancestors of our four-chambered heart. (betta)
 There is no `git` command, but the git Swiss Army knife is there: `cat-file`.
 
 But unlike biological structures, where we infer intermediate steps through embryology, comparitive anatomy, and the fossil record,
-waiting for fossils to be unearthed to confirm or deny our deductions,
+waiting for fossils to be unearthed or DNA sequence comparisons to be done, to help confirm or deny our deductions,
 git history gives us every stage, with comments on why the changes happened. (git log --one-line | wc -l)
 
 40,000 commits in the master branch.
