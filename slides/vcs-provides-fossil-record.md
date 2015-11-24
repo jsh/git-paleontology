@@ -1,4 +1,4 @@
-# Git History Is a Fossil Record
+## Git History Is a Fossil Record
 
 Git has been under version control its whole life.
 Git began on April 3, 2015, and was self-hosting by April 7.
