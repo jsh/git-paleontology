@@ -8,7 +8,7 @@ We can clone our own copy of the repo (git clone).
 It is not a trivial project (ls; find . -type f | wc -l).
 It has been under git control for longer than anything else, and we have every commit. (git log)
 We can see any stage in its evolution we choose: the first, for example.
-(git checkout)
+( git checkout $(git rev-list --all | tail -1) )
 
 Under a dozen files. But with one tweak, because a Linux library name changed, 
 it builds (add to Makefile and make).

@@ -1,0 +1,9 @@
+#!/bin/bash -eu
+
+git clone git@github.com:git/git.git # a great URL
+cd git; ls # our own copy of the fossil record
+find . -type f | wc -l # non-trivial software
+git log | tail # heaps of history
+git rev-list --all | tail -1  # all the SHA1s in master
+git checkout $(git rev-list --all | tail -1) # the oldest
+ls # Oooh.

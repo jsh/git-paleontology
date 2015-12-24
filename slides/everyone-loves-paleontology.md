@@ -3,9 +3,9 @@
 Who here knows lots of Latin binomials for plants and animals?
 
 - *Turdus migratorius*? (pic)
-- *Dactilys glomerata*? (pic)
+- *Triticum aestivum*? (pic)
 
-The etymology helps. "*migratorius*" means it migrates. "*Dactilys*" means the one-sided heads looks like fingers, reaching out.
+The etymology helps. *migratorius* means it migrates. *Triticum* is probably the supine of *terere*, so "about to be ground," and "aestivum" is just "summer."
 
 *Lycopersicum esculentum*? "*esculentum*" means it's edible. "*Lycopersicum*" is from Greek -- "*Lycos*", wolf + "*persicon*" peach:
 an edible wolf-peach. (pic)
