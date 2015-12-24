@@ -1,9 +1,16 @@
 #!/bin/bash -eu
 
+# Build the oldest
+
 git checkout -b devonian $(git rev-list --all | tail -1) # the oldest
 echo 'LIBS=-lcrypto -lz' >> Makefile # port to current Ubuntu
 make && echo "Success!"
 ls
-git commit -am"Port to $(lsb_release -d | cut -f 2-)" # stash it away
+git commit -am"Port first version to $(lsb_release -d | cut -f 2-)" # stash it away
+
+# See where we are
+
 git config alias.lol 'log --graph --decorate --oneline --all'
-git lol # here's our world
+git lol | head # here's our world
+echo '...'
+git lol | tail
