@@ -2,7 +2,8 @@
 
 git checkout -b devonian $(git rev-list --all | tail -1) # the oldest
 echo 'LIBS=-lcrypto -lz' >> Makefile # port to current Ubuntu
-make
-ls # Eureka!
+make && echo "Success!"
+ls
 git commit -am"Port to $(lsb_release -d | cut -f 2-)" # stash it away
+git config alias.lol 'log --graph --decorate --oneline --all'
 git lol # here's our world
