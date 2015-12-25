@@ -1,4 +1,6 @@
-#!/bin/bash -eu
+#!/bin/bash -eux
+
+PS4='[\T] '
 
 # Build the oldest
 
@@ -14,3 +16,4 @@ git config --global alias.lo 'log --graph --decorate --oneline'
 git lol -5
 echo '...'
 git lol | tail -5
+exit
