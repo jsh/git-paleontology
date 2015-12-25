@@ -3,5 +3,4 @@
 PS4='[\T] '
 
 git log --oneline master | wc -l
-sloccount
-
+sloccount .
