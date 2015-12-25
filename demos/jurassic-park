@@ -12,7 +12,7 @@ git commit -am"Port first version to $(lsb_release -d | cut -f 2-)" # stash it a
 
 # See where we are
 
-git config --global alias.lo 'log --graph --decorate --oneline'
+git config --global alias.lol 'log --graph --decorate --oneline --all'
 git lol -5
 echo '...'
 git lol | tail -5
