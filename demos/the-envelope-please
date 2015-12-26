@@ -1,5 +1,6 @@
 #!/bin/bash -eu
 
+export GIT_DIR=$PWD/git/.git
 spw=$((7*24*60*60)) # seconds per week
 d0=$(git log -1 --date=short --pretty=format:%ct e83c516) # first commit, seconds since epoch
 ntot=$(git rev-list master | wc -l) # current commit total
