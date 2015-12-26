@@ -1,15 +1,13 @@
 #!/bin/bash -eu
 
-echo week commits
-spd=$((24*60*60)) # seconds per day
-spw=$((7*spd))    # seconds per week
+spw=$((7*24*60*60)) # seconds per week
 d0=$(git log -1 --date=short --pretty=format:%ct e83c516) # first commit, seconds since epoch
-
 ntot=$(git rev-list master | wc -l) # current commit total
-#n=0
 
+echo "week commits" > total-commits.dat # header
 for ((n=0, wk=0, sec=$d0; n < ntot; wk+=1, sec+=spw)); do
   n=$(git rev-list master --before=$sec | wc -l)
   echo $wk $((n-1))
-done
+done >> total-commits.dat # data
 
+r --vanilla < total-commits.dat	# graph commits-per-week
