@@ -1,0 +1,5 @@
+cc <- read.csv("commits-by-week.dat", sep="")
+plot(cc, main="Commits by Week")
+cc.lm = lm(cc)
+abline(cc.lm)
+with(cc, cor.test(week,total))
