@@ -2,5 +2,6 @@
 
 PS4='[\T] '
 
-git log --oneline master | wc -l
-sloccount .
+git log --oneline master | tail
+git log --oneline master | wc -l # count the commits
+sloccount . # the most widely used COCOMO tool

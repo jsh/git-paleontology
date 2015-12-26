@@ -7,13 +7,13 @@ PS4='[\T] '
 git checkout -b devonian $(git rev-list --all | tail -1) # the oldest
 echo 'LIBS=-lcrypto -lz' >> Makefile # port to current Ubuntu
 make && echo "Success!"
-ls
+ls # what's here?
 git commit -am"Port first version to $(lsb_release -d | cut -f 2-)" # stash it away
 
 # See where we are
 
-git config --global alias.lol 'log --graph --decorate --oneline --all'
-git lol -5
+git config --global alias.lol 'log --graph --decorate --oneline --all' # ease typing
+git lol -5 # you are here, in Oz
 echo '...'
-git lol | tail -5
+git lol | tail -5 # you started here, in Kansas
 exit
