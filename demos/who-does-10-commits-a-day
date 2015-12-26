@@ -1,0 +1,10 @@
+#!/bin/bash -eux
+
+PS4='[\T] '
+
+git checkout master # get back, Jo-Jo
+git shortlog | tail # who?
+git shortlog | grep :$ | wc -l # victory has a hundred fathers
+versa() { perl -lne 'print join q" ", reverse split / /'; } # a typing convenience
+git shortlog | grep :$ | tr -d '():' | versa | sort -n | versa | tail # what's the distribution?
+
