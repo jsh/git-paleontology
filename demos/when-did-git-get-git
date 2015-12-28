@@ -6,7 +6,7 @@ git log -- git.c | tail # when did git.c appear?
 cat << __EOF__ > ~/bin/git-first
 #!/bin/bash
 
-git log -- $1 | tail -1 | cut -f1 -d' '
+git log -- $1 | tail -1 | cut -f1 -d' ' # SHA1 of first commit with file $1
 __EOF__
 chmod +x ~/bin/git-first
 git first git.c # first commit with git.c
