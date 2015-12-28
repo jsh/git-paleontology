@@ -4,8 +4,8 @@ git ls-tree --name-only $(git first git.c)^ | column # look! a git.sh
 git ls-tree --name-only $(git first git.sh)^ | column # and a git
 git ls-tree --name-only $(git first git)^ | column # and nothing
 
-git show $(git first git):git
-git log -1 $(git first git)
+git show $(git first git):git # what did the first git look like?
+git log -1 $(git first git) # when and why did it appear?
 
 
 
