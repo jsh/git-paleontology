@@ -1,0 +1,11 @@
+#!/bin/bash -eu
+
+git ls-tree --name-only $(git first git.c)^ | column # look! a git.sh
+git ls-tree --name-only $(git first git.sh)^ | column # and a git
+git ls-tree --name-only $(git first git)^ | column # and nothing
+
+git show $(git first git):git
+git log -1 $(git first git)
+
+
+
