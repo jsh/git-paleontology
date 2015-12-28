@@ -1,0 +1,13 @@
+#!/bin/bash
+
+git log -- git.c | tail # when did git.c appear?
+
+# make a new git subcommand
+cat << __EOF__ > ~/bin/git-first
+#!/bin/bash
+
+git log -- $1 | tail -1 | cut -f1 -d' '
+__EOF__
+chmod +x ~/bin/git-first
+git first git.c # first commit with git.c
+git first # even works without an arg
