@@ -1,21 +1,21 @@
 GIT_DIR
 git checkout
-git checkout -b devonian
-git checkout master
+git checkout --branch
 git clone
-git commit -am
-git config --global alias.lol
+git commit
+git commit --all
+git commit --message
+git config --global
+git config alias
 git log 
+git log --date
+git log --max-count
 git log --oneline
-git log --oneline -- $1
-git log -1
-git log -1 --date=short --pretty=format:%ct
-git log -1 --pretty=format:%ad%x09%s
-git ls-tree --name-only
-git ls-tree --name-only
+git log --pretty
 git ls-tree --name-only
 git rev-list
 git rev-list --all
-git rev-list master --before=$sec
+git rev-list --before
 git shortlog
 git show
+git tag
