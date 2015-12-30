@@ -1,21 +1,12 @@
-GIT_DIR
-git checkout
-git checkout --branch
+GIT_DIR 2005-05-09
+git checkout 2005-06-21
 git clone
-git commit
-git commit --all
-git commit --message
-git config --global
+git commit 2005-05-30
+git config
 git config alias
 git log 
-git log --date
-git log --max-count
-git log --oneline
-git log --pretty
-git ls-tree --name-only
+git ls-tree 2005-04-13
 git rev-list
-git rev-list --all
-git rev-list --before
 git shortlog
 git show
-git tag
+git tag 2005-04-25
