@@ -10,7 +10,7 @@ It has been under git control for longer than anything else, and we have every c
 We can see any stage in its evolution we choose: the first, for example.
 ( git checkout $(git rev-list --all | tail -1) )
 
-Under a dozen files. But with one tweak, because a Linux library name changed, 
+Under a dozen files. But with one tweak, because a Linux library name changed,
 it builds (add to Makefile and make).
 
 And runs. It can version-control itself. In fact, it works fine on modern git repos.

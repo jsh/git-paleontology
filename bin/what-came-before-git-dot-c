@@ -11,6 +11,3 @@ for i in git.c git.sh git; do
   echo == $i ==
   git log -1 --pretty=format:%ad%x09%s $(git first $i)
 done
-
-
-

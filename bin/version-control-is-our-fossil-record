@@ -8,4 +8,3 @@ cd docker
 git tag -l 'v*.0' | tail -r | while read i; do
   git log -1 --pretty=format:"%D: %x09%ar%n" $i
 done | sed 's/tag: //'
-
