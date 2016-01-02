@@ -1,7 +1,11 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 
+source bash-paleo
 PS4='[\T] '
+set -x
 
-git log --oneline master | tail
-git log --oneline master | wc -l # count the commits
+cd $top/git
+git log --oneline master | wc -l # lots of commits
+git log --oneline master | tail  # here's the end
 sloccount . # the most widely used COCOMO tool
+exit 0

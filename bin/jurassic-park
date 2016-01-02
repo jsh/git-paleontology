@@ -1,12 +1,16 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
+
+source bash-paleo
+cd $top/git
 
 PS4='[\T] '
+set -x
 
 # Build the oldest
 
-git checkout -b devonian $(git rev-list --all | tail -1) # the oldest
+git checkout devonian || git checkout -b devonian $(git rev-list --all | tail -1) # the oldest
 echo 'LIBS=-lcrypto -lz' >> Makefile # port to current Ubuntu
-make && echo "Success!"
+make 2>/dev/null && echo "Success!"
 ls # what's here?
 git commit -am"Port first version to $(lsb_release -d | cut -f 2-)" # stash it away
 

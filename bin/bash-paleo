@@ -1,0 +1,4 @@
+# set up the environment
+
+top=$(git rev-parse --show-toplevel)
+grep -q $top/bin <<< $PATH || PATH+=:$top/bin # add $top/bin to the path if it's not there

@@ -1,6 +1,7 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 
 PS4='[\T] '
+set -x
 
 git checkout master # get back, Jo-Jo
 git shortlog | tail # who?

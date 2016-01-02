@@ -1,0 +1,22 @@
+#!/bin/bash -eu
+
+PS4='[\T] '
+set -x
+
+die() { echo "$@" >&2; exit 1; }
+
+# Set up the environment
+[[ $(uname -a) = *Ubuntu* ]] || die "Please run this on an Ubuntu system."
+
+packages='
+gcc
+git
+libssl-dev
+make
+sloccount
+tree
+'
+
+sudo apt-get -qq update -y > /dev/null
+sudo apt-get -qq install -y $packages > /dev/null
+exit 0
