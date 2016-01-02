@@ -1,10 +1,17 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 
 PS4='[\T] '
+set -x
 
-git clone https://github.com/docker/docker.git
+[[ $(uname -s) = Darwin ]] && tac() { tail -r; }
+[ -d docker ] && rm -rf docker
+
+git clone -q https://github.com/docker/docker.git
 cd docker
 
-git tag -l 'v*.0' | tail -r | while read i; do
-  git log -1 --pretty=format:"%D: %x09%ar%n" $i
-done | sed 's/tag: //'
+set +x
+git tag -l 'v*.0' | sort -Vr | while read i; do
+  git log -1 --pretty=format:"%d: %x09%ar%n" $i
+done | sed 's/.*tag: v//; s/)://'
+set -x
+exit 0
