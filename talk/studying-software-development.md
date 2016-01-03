@@ -10,7 +10,9 @@ Philosophy is ["what we imagine should work."](https://en.wikipedia.org/wiki/COC
 We model what we think software development must be like, from first principles,
 and then use [data and anecdotes to fit those models.](https://en.wikipedia.org/wiki/Halstead_complexity_measures)
 
-You can even combine art and philosophy (the thinker)
+Each approach yields powerful truths; you can even combine the two.
+
+![The Thinker](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/The_Thinker%2C_Rodin.jpg/474px-The_Thinker%2C_Rodin.jpg "Le Penseur")
 
 Version control systems give us a third option:
 we can look at the fossil record of programs.
