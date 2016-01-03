@@ -2,70 +2,28 @@
 
 Who here knows lots of Latin binomials for plants and animals?
 
-- *Turdus migratorius*? (pic)
-- *Triticum aestivum*? (pic)
+- *Turdus migratorius*?
 
-The etymology helps. *migratorius* means it migrates. *Triticum* is probably the supine of *terere*, so "about to be ground," and "aestivum" is just "summer."
+![American Robin](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Turdus-migratorius-002.jpg/440px-Turdus-migratorius-002.jpg "*Turdus migratorius*")
 
-*Lycopersicum esculentum*? "*esculentum*" means it's edible. "*Lycopersicum*" is from Greek -- "*Lycos*", wolf + "*persicon*" peach:
-an edible wolf-peach. (pic)
+- *Triticum aestivum*?
 
-So, no, right? Here's another:
+![Bread wheat](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Young_Wheat_crop_in_a_field_near_Solapur%2C_Maharashtra%2C_India.jpg/440px-Young_Wheat_crop_in_a_field_near_Solapur%2C_Maharashtra%2C_India.jpg "*Triticum aestivum*")
 
-- *Tyrannosaurus rex* (pic)
+Etymology helps. *migratorius* means it migrates. *Triticum* is probably the supine of *terere*, so "about to be ground," and *aestivum* is just "summer."
 
-You think you don't know Latin? How many horns does a *Triceratops* have? (pic)
-Few people like botany or Latin, or math or software for that matter. Even little kids love paleontology and fossils.
 
-What's this have to do with software?
+- *Lycopersicum esculentum*? 
 
-People have studied software development in a couple of ways:
+Latin doesn't help when the etymology is Greek. *Esculentum*, from the Latin, means it's edible. But *Lycopersicum* is from λύκος: wolf + περσικόν: peach: the edible wolf-peach.
 
-* art (Martile)
-* philosophy (On Liberty)
+![Tomatoes](https://en.wiki2.org/wikipedia/commons/thumb/a/a7/Colorful_Red_and_Yellow_Tomatoes_2816px.jpg/220px-Colorful_Red_and_Yellow_Tomatoes_2816px.jpg "*Lycopersicum esculentum*")
 
-Art develops as good programmers reflecting out what they're doing (Art of Computer Programming)
-We grow our art by finding and learning rules-of-thumb (Goto Considered Harmful).
-We hone our craft through practice and copying experts (Kernighan and Pike).
-All those are art.
+Don't give up yet, though. Here's another:
 
-Philosophy is build from first principles, and then fit to data -- people who model what software development must be like, from first principles, and then
-use data and anecdotes to fit their models.
-(Software Physics)
-(Cocomo)
+![T. rex](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Sues_skeleton.jpg/440px-Sues_skeleton.jpg "*Tyrannosaurus rex*")
 
-You can even combine art and philosophy (the thinker)
+Every ten-year-old can name dinosaurs. People who can't program in Go or even get out of high school can name dinosaurs. People who don't speak English can name dinosaurs. This one's *T. rex*. How many horns does a *Triceratops* have?
 
-Version control systems give us a third option:
-we can look at the fossil record of programs.
-We can look at how we develop software in detail by combing through every commit, looking for patterns.
+Everybody loves paleontology.
 
-We can study the evolution of software by *looking* at the evolution of software: Software Paleontology.
-
-Let's give it a try.
-
-We have to pick something to study. We want well-defined, but not a toy.
-All code ever written in Java would be too much. "Hello, world" not enough. We need something that's not to small, not too big, but just right.
-(Goldilocks and the Three Bears)
-
-We need a model organism -- a lab rat (Lab rat)
-
-The code needs to be open-source, with a public repo, so we can look at it. Microsoft Word is out. (Microsoft Word).
-
-I like git as a VCS tool, for a lot of reasons, but one is that it encourages frequent commits. You get a finer-grained fossil record.
-Plus, there are, quite literally, millions of git-controlled projects on GitHub alone, thousands more each day, so that gives us plenty of repos to choose from.
-(github growth)
-
-So, what's a well-exercised piece of real, working code, up on, say, GitHub that we might want to pick?
-
-I choose ... `git` itself. (git page)
-
-I'm going to use git to look at its own history.
-You'll learn a little bit about
-
-- learn something about  how to use git to look at repos,
-- learn something about git's fossil record,
-
-and, I hope
-
-- get excited about software paleontology.
