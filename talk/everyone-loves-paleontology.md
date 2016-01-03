@@ -10,7 +10,7 @@ Who here knows lots of Latin binomials for plants and animals?
 
 ![Bread wheat](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Young_Wheat_crop_in_a_field_near_Solapur%2C_Maharashtra%2C_India.jpg/440px-Young_Wheat_crop_in_a_field_near_Solapur%2C_Maharashtra%2C_India.jpg "*Triticum aestivum*")
 
-Etymology helps. *migratorius* means it migrates. *Triticum* is probably the supine of *terere*, so "about to be ground," and *aestivum* is just "summer."
+Etymology helps. *migratorius* means it migrates. *Triticum* is probably the supine of *terere*, so "that which is about to be ground," and *aestivum* is just "in the summer."
 
 
 - *Lycopersicum esculentum*? 
@@ -25,5 +25,5 @@ Don't give up yet, though. Here's another:
 
 Every ten-year-old can name dinosaurs. People who can't program in Go or even get out of high school can name dinosaurs. People who don't speak English can name dinosaurs. This one's *T. rex*. How many horns does a *Triceratops* have?
 
-Everybody loves paleontology.
+We all love fossils.
 
