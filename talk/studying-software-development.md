@@ -1,49 +1,42 @@
 ## Studying Software Development
 
-Historically, people have studied software development in two ways -- through art and through philosophy.
+Historically, we have used two paths to study software development: art and philosophy.
 
-Art is ["what we've done that works."](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming)
+Art is ["what we've done that we think works."](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming)
 We grow our art by finding and learning [rules-of-thumb.](https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style)
 We hone our craft through practice and by [copying experts.](https://en.wikipedia.org/wiki/The_Practice_of_Programming)
 
-Philosophy is ["what we imagine should work."](https://en.wikipedia.org/wiki/COCOMO) 
-We model what we think software development must be like, from first principles,
+Philosophy is ["what we've done that we think ought to work."](https://en.wikipedia.org/wiki/COCOMO) 
+We model what we think software development is probably like, from introspection and first principles,
 and then use [data and anecdotes to fit those models.](https://en.wikipedia.org/wiki/Halstead_complexity_measures)
 
-Each approach yields powerful truths; you can even combine the two.
+Each approach yields powerful truths; you can even [combine the two.](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/The_Thinker%2C_Rodin.jpg/474px-The_Thinker%2C_Rodin.jpg)
 
-![The Thinker](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/The_Thinker%2C_Rodin.jpg/474px-The_Thinker%2C_Rodin.jpg "Le Penseur")
+Today, though, version control systems give us a third option. We can now look at how a piece of software develops by examining every change; we can study software development in detail, combing through data and looking for patterns.
 
-Version control systems give us a third option:
-we can look at the fossil record of programs.
-We can look at how we develop software in detail by combing through every commit, looking for patterns.
+We can study the evolution of programs by looking at their fossil records: Software Paleontology.
 
-We can study the evolution of software by *looking* at the evolution of software: Software Paleontology.
+I propose to give that a try.
 
-Let's give it a try.
+I have to pick something to study, and I want something well-defined, but not a toy.
+All code ever written in Java would be too much. "Hello, world" not enough. We need something that's [not too small, not too big, but just right.](https://en.wikipedia.org/wiki/File:The_Three_Bears_-_Project_Gutenberg_eText_17034.jpg)
 
-We have to pick something to study. We want well-defined, but not a toy.
-All code ever written in Java would be too much. "Hello, world" not enough. We need something that's not to small, not too big, but just right.
-(Goldilocks and the Three Bears)
+I need a model organism ... a software [lab rat](https://en.wikipedia.org/wiki/Laboratory_rat).
 
-We need a model organism -- a lab rat (Lab rat)
+The code needs to be open-source, with a public repo, so I can look at it. [Microsoft Word](https://en.wikipedia.org/wiki/Microsoft_Word) is significant, but the detailed history of its source code is inaccessible.
 
-The code needs to be open-source, with a public repo, so we can look at it. Microsoft Word is out. (Microsoft Word).
+I'd like something that's been maintained under a single version-control tool, because switching version-control tools will probably change developers' workflows.
 
-I like git as a VCS tool, for a lot of reasons, but one is that it encourages frequent commits. You get a finer-grained fossil record.
-Plus, there are, quite literally, millions of git-controlled projects on GitHub alone, thousands more each day, so that gives us plenty of repos to choose from.
+I lean towards programs maintained under `git`. It encourages frequent commits, so you get a fine-grained fossil record. Plus, there are, quite literally, millions of git-controlled projects on [GitHub](https://github.com) alone, with [thousands more each day](https://en.wikipedia.org/wiki/GitHub#History), so that gives me plenty of repos to choose from.
 (github growth)
 
-So, what's a well-exercised piece of real, working code, up on, say, GitHub that we might want to pick?
+So, what's a well-exercised piece of real, working code, up on, say, GitHub that I might want to study?
 
-I choose ... `git` itself. (git page)
+I pick ... [`git` itself.](https://en.wikipedia.org/wiki/Git_(software)) I'm going to use `git` to look at its own history. I'll
 
-I'm going to use git to look at its own history.
-You'll learn a little bit about
+- reveal some things about git's fossil record,
+- illustrate how to use git to look at repos,
 
-- learn something about  how to use git to look at repos,
-- learn something about git's fossil record,
+and
 
-and, I hope
-
-- get excited about software paleontology.
+- get you excited about doing software paleontology.
