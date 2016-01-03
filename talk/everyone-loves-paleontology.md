@@ -1,6 +1,6 @@
 ## Everyone Loves Paleontology
 
-Who here knows lots of Latin binomials for plants and animals?
+The first widely adopted international standard may have been [Linnaeus's 1758 scheme for naming living things](https://en.wikipedia.org/wiki/Binomial_nomenclature). Still, even today, not that many software engineers know "Latin names" of plants and animals.
 
 - *Turdus migratorius*?
 
@@ -11,7 +11,6 @@ Who here knows lots of Latin binomials for plants and animals?
 ![Bread wheat](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Young_Wheat_crop_in_a_field_near_Solapur%2C_Maharashtra%2C_India.jpg/440px-Young_Wheat_crop_in_a_field_near_Solapur%2C_Maharashtra%2C_India.jpg "*Triticum aestivum*")
 
 Etymology helps. *migratorius* means it migrates. *Triticum* is probably the supine of *terere*, so "that which is about to be ground," and *aestivum* is just "in the summer."
-
 
 - *Lycopersicum esculentum*? 
 
