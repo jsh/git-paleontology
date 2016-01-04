@@ -11,3 +11,6 @@ git submodule init
 git submodule update
 PATH+=:$PWD/bin
 ```
+
+Currently, all the code in `bin/` runs on Ubuntu 14.04, and most of it runs on Mac OS/X (El Capitan).
+On Ubuntu, `bin/setup-environment` will ensure needed packages are installed.
