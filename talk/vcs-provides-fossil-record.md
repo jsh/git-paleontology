@@ -38,3 +38,5 @@ Run on the version from ten years later, `sloccount`'s estimate is 3 years, whic
 
 There's really nothing wrong with philosophy and modelling when that's all you have available,
 but version-control software provides an alternative: accurate data.
+
+Let's begin to look, to [see what we can find.](https://github.com/jsh/git-paleontology/blob/master/talk/40%2C000-commits.md)
