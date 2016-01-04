@@ -32,7 +32,7 @@ I lean towards programs maintained under `git`. It encourages frequent commits, 
 
 So, what's a well-exercised piece of real, working code, up on, say, GitHub that I might want to study?
 
-I pick ... [`git` itself.](https://en.wikipedia.org/wiki/Git_(software)) I'm going to use `git` to look at its own history. I'll
+I pick ... [`git` itself.](https://en.wikipedia.org/wiki/Git_(software)) I'm going to use `git` to look at its own history. In the course of doing that, I'll try to
 
 - reveal some things about git's fossil record,
 - illustrate how to use git to look at repos,
@@ -40,3 +40,5 @@ I pick ... [`git` itself.](https://en.wikipedia.org/wiki/Git_(software)) I'm goi
 and
 
 - get you excited about doing software paleontology.
+
+[Let's get started.](https://github.com/jsh/git-paleontology/blob/master/talk/vcs-provides-fossil-record.md)
