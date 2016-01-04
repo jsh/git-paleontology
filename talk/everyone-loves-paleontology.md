@@ -18,4 +18,6 @@ Don't give up yet, though. Here's another. What's the Latin name of this?
 Every ten-year-old can name dinosaurs. People who can't program in Go or even get out of high school can name dinosaurs. People who don't speak English can name dinosaurs. This one's *T. rex*. How many horns does a *Triceratops* have?
 
 We all love fossils.
-
+t
+For a moment, though, let me switch gears and
+[talk about programming.](https://github.com/jsh/git-paleontology/blob/master/talk/studying-software-development.md)
