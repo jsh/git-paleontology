@@ -51,4 +51,5 @@ Source-code changes are analogous to substitutions; for `git`, the rate of subst
 You can use the number of commits between two stages of `git`'s evolution
 as a rough time measure of how far apart they are.
 
-The repository also tracks real time, so I don't yet know how that's useful, but it's thought-provoking.
+This is data-driven, and focused on a single software project, but it's still relatively big-picture work.
+What happens when we [focus on a single command?](https://github.com/jsh/git-paleontology/blob/master/talk/the-ur-git.md)
