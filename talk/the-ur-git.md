@@ -88,6 +88,11 @@ Date:   Wed Jun 1 09:13:26 2005 -0700
 ```
 
 Before this? Files with "git" in the name, but no git command, or anything like it. 
-We've hit bottom and found `git`'s beginning.
+We've hit bottom and found `git`'s beginning: "Ur-git."
+
+*The prefix "ur-", commonly used to denote first ancestors,
+comes from the name of [the great, Mesopotamian city-state of Ur](https://en.wikipedia.org/wiki/Ur).
+In 2015 BC, as far before Christ as we are after it, Ur was the greatest city in the world 
+-- roughly the same size as Boulder, Colorado, where I'm writing this.*
 
 There are over 150 Git subcommands, [can we do this for each?]()
