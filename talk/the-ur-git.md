@@ -110,4 +110,4 @@ comes from the name of [the great, Mesopotamian city-state of Ur](https://en.wik
 In 2015 BC, as far before Christ as we are after it, Ur was the greatest city in the world 
 -- roughly the same size as Boulder, Colorado, where I'm writing this.*
 
-There are over 150 Git subcommands, [can we do this for each?]()
+There are over 150 Git subcommands, [can we do this for each?](https://github.com/jsh/git-paleontology/blob/master/talk/when-did-other-subcommands-appear.md)
