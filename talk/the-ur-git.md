@@ -3,20 +3,35 @@
 Paleontologists are interested in origins. When did fish first crawl out onto land?
 When did dinosaurs first take to the air to become birds?
 
-Git gives you tools to ask questions like that, too. For example, Linus's first version of Git has no `git` command.
-When did `git` arise?
+Just as early mammals lacked breasts, 
+Linus's first version of Git built a handful of executables but had no `git` command.
+The current master branch builds `git` from a 700-plus-line sourcefile, `git.c` .
+You can't help but wonder when that appeared. 
+Git gives us tools to find out.
 
-Let's dig. The current master branch has a 700-plus-line file, `git.c` that's compiled into `git`. When did it appear?
+A simple one is `git log`, which shows the commit history of a source file, 
+even when the source file is no longer in the current version.
+
+To ease typing, create a new digging tool, `git first`, which unearths the oldest commit for a named file:
 
 ``` bash
-$ git log --oneline -- git.c | tail -1
+#!/bin/bash
+git log --oneline -- master $1 | tail -1 | cut -f1 -d' ' # SHA1 of first commit with file $1
+```
+
+(Any executable in `$PATH` named `git-*whatever*` creates a new subcommand, `git *whatever*` .)
+
+Taking this in hand, we can unearth the first `git.c`
+
+``` bash
+$ git first git.c
 8e49d50 C implementation of the 'git' program, take two.
 ```
 
-We could hunt for take one, but let's push on and look at the stratum below.
+We could hunt for "take one," but let's push on and dig into the stratum below.
 
 ``` bash
-$ git checkout $(git log --oneline -- git.c | tail -1 | cut -f1 -d' ') # the first git.c
+$ git checkout $(git first git.c) # the first git.c
 $ git checkout HEAD^ # the parent
 $ ls git*
 ```
@@ -27,7 +42,7 @@ as a glance at the source will confirm. This confirms the log comment: `git.c` r
 Okay, let's try the same trick again.
 
 ``` bash
-$ git checkout $(git log --oneline -- git.sh | tail -1 | cut -f1 -d' ')
+$ git checkout $(git first git.sh)
 HEAD is now at 215a7ad... Big tool rename.
 $ git checkout HEAD^
 $ ls git*
@@ -59,7 +74,7 @@ One last dig finds the first `git`.
 
 ``` bash
 
-$ git checkout $(git log --oneline master -- git | tail -1 | cut -f1 -d' ')
+$ git checkout $(git first git)
 HEAD is now at e764b8e... Add "git" and "git-log-script" helper scripts.
 $ cat git
 #!/bin/sh
@@ -68,7 +83,7 @@ shift
 exec $cmd "$@"
 ```
 
-It's a three-line shell script. The log comment explains why it arose.
+It's a three-line shell script. Linus's comment explains why it arose.
 
 ``` bash
 $ git log -1
