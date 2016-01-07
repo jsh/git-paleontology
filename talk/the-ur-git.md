@@ -4,7 +4,7 @@ Paleontologists are interested in origins. When did fish first crawl out onto la
 When did dinosaurs first take to the air to become birds?
 
 Just as early mammals lacked breasts, 
-Linus's first version of Git built a handful of executables but had no `git` command.
+You've seen that Linus's first version of Git built into a handful of executables, yet it had no `git` command.
 The current master branch builds `git` from a 700-plus-line sourcefile, `git.c` .
 You can't help but wonder when that appeared. 
 Git gives us tools to find out.
@@ -19,7 +19,7 @@ To ease typing, create a new digging tool, `git first`, which unearths the oldes
 git log --oneline -- master $1 | tail -1 | cut -f1 -d' ' # SHA1 of first commit with file $1
 ```
 
-(Any executable in `$PATH` named `git-*whatever*` creates a new subcommand, `git *whatever*` .)
+(Any executable in `$PATH` named `git-whatever` creates a new subcommand, `git` *`whatever`* .)
 
 Taking this in hand, we can unearth the first `git.c`
 
