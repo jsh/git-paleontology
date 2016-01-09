@@ -1,4 +1,4 @@
-### How to Create a Cloud Server with Google Compute Engine
+## Appendix: How to Create a Cloud Server with Google Compute Engine
 
 Google Compute Engine isn't the most powerful cloud service, with the most bells and whistles, but using it is dirt-simple.
 Here's a step-by-step.

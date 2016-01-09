@@ -4,9 +4,9 @@ Paleontologists are interested in origins. When did fish first crawl out onto la
 When did dinosaurs first take to the air to become birds?
 
 Just as early mammals lacked breasts, 
-You've seen that Linus's first version of Git built into a handful of executables, yet it had no `git` command.
+you've seen that Linus's first version of Git built into a handful of executables, but had no `git` command.
 The current master branch builds `git` from a 700-plus-line sourcefile, `git.c` .
-You can't help but wonder when that appeared. 
+When did `git.c` appear? 
 Git gives us tools to find out.
 
 A simple one is `git log`, which shows the commit history of a source file, 
@@ -28,7 +28,8 @@ $ git first git.c
 8e49d50 C implementation of the 'git' program, take two.
 ```
 
-We could hunt for "take one," but let's push on and dig into the stratum below.
+We could now hunt for "implementation of the 'git' program, take one."
+Instead, let's push on and dig into the stratum below.
 
 ``` bash
 $ git checkout $(git first git.c) # the first git.c
@@ -37,9 +38,10 @@ $ ls git*
 ```
 
 The layer below no longer has a `git.c`, but there is a `git.sh`, which fills the same niche,
-as a glance at the source will confirm. This confirms the log comment: `git.c` replaced `git.sh`.
+as a glance at the source will confirm.
+This confirms the log comment: `git.c` is just a "C implementation" of `git.sh`.
 
-Okay, let's try the same trick again.
+Why stop now? Let's try the same trick again.
 
 ``` bash
 $ git checkout $(git first git.sh)
@@ -49,7 +51,7 @@ $ ls git*
 ```
 
 In the next stratum down, `git.sh` is no more, but there's a `git`.
-Returning for a moment to the previous layer, which still had `git.sh`, we can see that the two are almost the same.
+Returning for a moment to the previous layer, which still had `git.sh`, we can compare the two versions.
 
 ``` bash
 $ git checkout -
@@ -70,12 +72,15 @@ $  diff git.sh <(git show HEAD^:git)
 > ls $path | sed -ne 's/^git-\(.*\)-script/  \1/p' | fmt
 ```
 
+They're basically the same.
+
 One last dig finds the first `git`.
 
 ``` bash
 
 $ git checkout $(git first git)
 HEAD is now at e764b8e... Add "git" and "git-log-script" helper scripts.
+
 $ cat git
 #!/bin/sh
 cmd="git-$1-script"
@@ -83,7 +88,7 @@ shift
 exec $cmd "$@"
 ```
 
-It's a three-line shell script. Linus's comment explains why it arose.
+The first `git` command is a three-line shell script. Linus's comment explains why he created it.
 
 ``` bash
 $ git log -1
@@ -102,8 +107,8 @@ Date:   Wed Jun 1 09:13:26 2005 -0700
 
 ```
 
-Before this? Files with "git" in the name, but no git command, or anything like it. 
-We've hit bottom and found `git`'s beginning: "Ur-git."
+Before this? Files with "git" in the name, but no `git` command, or anything like it. 
+We've hit bottom and found `git`'s beginning: the "Ur-git."
 
 *The prefix "ur-", commonly used to denote first ancestors,
 comes from the name of [the great, Mesopotamian city-state of Ur](https://en.wikipedia.org/wiki/Ur).
