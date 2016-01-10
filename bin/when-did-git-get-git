@@ -6,10 +6,10 @@ set -x
 git log -- git.c | tail -47 # when did git.c appear?
 
 # make a new git subcommand
-cat << __EOF__ > git-first
+cat << '__EOF__' > git-first
 #!/bin/bash
 
-git log --oneline -- $1 | tail -1 | cut -f1 -d' ' # SHA1 of first commit with file $1
+git log --oneline master -- $1 | tail -1 | cut -f1 -d' ' # SHA1 of first commit with file $1
 __EOF__
 install -D git-first ../bin
 git first git.c # first commit with git.c
