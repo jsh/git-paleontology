@@ -1,4 +1,13 @@
 # set up the environment
 
 top=$(git rev-parse --show-toplevel)
-grep -q $top/bin <<< $PATH || PATH+=:$top/bin # add $top/bin to the path if it's not there
+
+# add things to the path if they're not already there
+for i in $top/bin $top/git-scratch; do
+  grep -q $i <<< $PATH || PATH+=:$i
+done
+
+# add things to the cdpath if they're not already there
+for i in $top; do
+  grep -q $i <<< $CDPATH || CDPATH+=:$i
+done
