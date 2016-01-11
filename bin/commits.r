@@ -1,4 +1,4 @@
-cc <- read.csv("total-commits.dat", sep="")
+cc <- read.csv("/tmp/total-commits.dat", sep="")
 plot(cc, main="Cumulative Commits")
 fit <- lm(cc$commits ~ cc$week)
 abline(fit, col="red", lwd=4)

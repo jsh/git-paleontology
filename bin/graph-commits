@@ -1,0 +1,8 @@
+#!/bin/bash -eu
+
+cp ${1:?Usage: $0 datafile} /tmp/total-commits.dat
+
+sudo apt-get -qq install -y r-base  # install R. This, too, takes a long time.
+R --vanilla < ../bin/commits.r	# graph commits-per-week
+
+exit 0
