@@ -14,3 +14,5 @@ __EOF__
 install -D git-first ../bin
 git first git.c # first commit with git.c
 git first # even works without an arg
+
+exit 0

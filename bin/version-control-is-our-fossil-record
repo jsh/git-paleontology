@@ -14,4 +14,5 @@ git tag -l 'v*.0' | sort -Vr | while read i; do
   git log -1 --pretty=format:"%d: %x09%ar%n" $i
 done | sed 's/.*tag: v//; s/)://'
 set -x
+
 exit 0
