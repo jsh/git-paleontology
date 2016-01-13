@@ -1,0 +1,59 @@
+#!/bin/bash -eux
+
+gbin=~/git
+PATH=$gbin:$PATH
+
+if type -p init-db > /dev/null; then
+  git-init-db() {
+    init-db "$@"
+  }
+fi
+
+if type -p update-cache > /dev/null; then
+  git-update-cache() {
+    update-cache "$@"
+  }
+fi
+
+if type -p cat-file > /dev/null; then
+  git-cat-file() {
+    cat-file "$@"
+  }
+fi
+
+if type -p diff-files > /dev/null; then
+  git-diff-files() {
+    diff-files "$@"
+  }
+fi
+
+if type -p write-tree > /dev/null; then
+  git-write-tree() {
+    write-tree "$@"
+  }
+fi
+
+if type -p commit-tree > /dev/null; then
+  git-commit-tree() {
+    commit-tree "$@"
+  }
+fi
+
+cd /tmp
+[ -d test ] && rm -rf test
+mkdir test
+cd $_
+
+git-init-db
+touch empty-file
+git-update-cache --add empty-file
+git-cat-file -t e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+git-cat-file "blob" e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+echo 'echo hello-world' > empty-file 
+#git-diff-files -p empty-file # earlier is show-diff
+#git-diff-files empty-file
+> empty-file
+git-write-tree
+tree .git
+echo "Initial commit" | git-commit-tree $(git-write-tree) > .git/HEAD
+
