@@ -25,7 +25,12 @@ if type -p diff-files > /dev/null; then
   git-diff-files() {
     diff-files "$@"
   }
+elif type -p show-diff > /dev/null; then
+  git-diff-files() {
+    show-diff "$@"
+  }
 fi
+
 
 if type -p write-tree > /dev/null; then
   git-write-tree() {
@@ -39,6 +44,12 @@ if type -p commit-tree > /dev/null; then
   }
 fi
 
+empty-blob() {
+ pushd .git/objects
+ find . -type f | grep e6 | tr -d './'
+ pushd ~-
+}
+
 cd /tmp
 [ -d test ] && rm -rf test
 mkdir test
@@ -47,8 +58,10 @@ cd $_
 git-init-db
 touch empty-file
 git-update-cache --add empty-file
-git-cat-file -t e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
-git-cat-file "blob" e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+
+empty_blob=$(empty-blob)
+git-cat-file -t $empty_blob
+git-cat-file "blob" $empty_blob
 echo 'echo hello-world' > empty-file 
 #git-diff-files -p empty-file # earlier is show-diff
 #git-diff-files empty-file
