@@ -44,10 +44,10 @@ if type -p commit-tree > /dev/null; then
   }
 fi
 
-empty-blob() {
- pushd .git/objects
- find . -type f | grep e6 | tr -d './'
- pushd ~-
+blob-sha1() {
+ cd $repo/objects
+ find . -type f | tr -d './'
+ cd ~-
 }
 
 cd /tmp
@@ -56,17 +56,26 @@ mkdir test
 cd $_
 
 git-init-db
-touch empty-file
-git-update-cache --add empty-file
+if [ -d .dircache ]; then
+  repo=.dircache
+else
+  repo=.git
+fi
 
-empty_blob=$(empty-blob)
-git-cat-file -t $empty_blob
-git-cat-file "blob" $empty_blob
-echo 'echo hello-world' > empty-file 
-#git-diff-files -p empty-file # earlier is show-diff
-#git-diff-files empty-file
-> empty-file
+echo 'echo hello, world' > hello; chmod +x hello
+git-update-cache --add hello
+
+if git-cat-file --help |& fgrep -q -- '-t '; then
+  blob_sha1=$(blob-sha1)
+  git-cat-file -t $blob_sha1
+  git-cat-file "blob" $blob_sha1
+  #git-cat-file $blob_sha1
+fi
+
+#echo 'echo hello, git' > hello
+#git-diff-files -p hello # earlier is show-diff
+#git-diff-files hello
 git-write-tree
-tree .git
-echo "Initial commit" | git-commit-tree $(git-write-tree) > .git/HEAD
+tree $repo
+echo "Initial commit" | git-commit-tree $(git-write-tree) > $repo/HEAD
 
