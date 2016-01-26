@@ -5,8 +5,9 @@ set -x
 
 git checkout master # get back, Jo-Jo
 git shortlog | tail # who?
-git shortlog | grep :$ | wc -l # victory has a hundred fathers
+git shortlog -s | wc -l # victory has a hundred fathers
 versa() { perl -lne 'print join q" ", reverse split / /'; } # a typing convenience
-git shortlog | grep :$ | tr -d '():' | versa | sort -n | versa | tail # what's the distribution?
+git shortlog -s | sort -n | tail # what's the distribution?
+git shortlog -s | sort -n | awk '{print $1}' | uniq -c | head # many committers have only committed once
 
 exit 0
