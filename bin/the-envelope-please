@@ -1,29 +1,13 @@
 #!/bin/bash -eu
-
-die() { echo "$@" >&2; exit 1; }
-
-case $# in
-  0) ;;
-  1) exec > $1 ;;
-  *) die "usage: $0 [outfile]" ;;
-esac
+# table of cumulative commits by week
 
 PS4='[\T] '
 set -x
 
-first_commit=$(git first)
-spw=$((7*24*60*60)) # seconds per week
-d0=$(git log -1 --date=short --pretty=format:%ct $first_commit) # first commit, seconds since epoch
-ntot=$(git rev-list master | wc -l) # current commit total
+echo week commits
 
-echo "week commits" > total-commits.dat # header
-
-# This takes half an hour
-set +x
-for ((n=0, wk=0, sec=$d0; n < ntot; wk+=1, sec+=spw)); do
-  n=$(git rev-list master --before=$sec | wc -l)
-  echo $wk $((n-1))
-done >> total-commits.dat # data
-set -x
+final-commit-of-week | sort -k2 > W	# week, commit
+number-commits | sort -k2 > N		# commit-number, commit
+join -1 2 -2 2 W N | cut -f2- -d' ' | sort -n	# week, commit-number
 
 exit 0
