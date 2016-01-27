@@ -1,7 +1,6 @@
 #!/bin/bash -eu
 
 PS4='[\T] '
-set -x
 
 git ls-tree --name-only $(git first git.c)^ | column # look! a git.sh
 git ls-tree --name-only $(git first git.sh)^ | column # and a git

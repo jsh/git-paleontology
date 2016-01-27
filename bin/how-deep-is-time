@@ -2,10 +2,10 @@
 
 source bash-paleo
 PS4='[\T] '
-set -x
 
 cd $top/git
 git log --oneline master | wc -l # lots of commits
 git log --oneline master | tail  # here's the end
 sloccount . # the most widely used COCOMO tool
+
 exit 0

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 PS4='[\T] '
-set -x
 
 git log -- git.c | tail -47 # when did git.c appear?
 

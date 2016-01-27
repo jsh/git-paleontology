@@ -2,7 +2,6 @@
 
 source bash-paleo
 PS4='[\T] '
-set -x
 
 cd $top/git; ls # our own copy of the fossil record
 find . -type f | wc -l # non-trivial software

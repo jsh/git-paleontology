@@ -1,7 +1,6 @@
 #!/bin/bash -eu
 
 PS4='[\T] '
-set -x
 
 [[ $(uname -s) = Darwin ]] && tac() { tail -r; }
 [ -d docker ] && rm -rf docker

@@ -4,7 +4,6 @@ source bash-paleo
 cd $top/git
 
 PS4='[\T] '
-set -x
 
 # Build the oldest
 
