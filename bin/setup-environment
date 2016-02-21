@@ -1,8 +1,5 @@
 #!/bin/bash -eu
 
-PS4='[\T] '
-set -x
-
 die() { echo "$@" >&2; exit 1; }
 
 # Set up the environment
