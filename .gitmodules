@@ -4,3 +4,6 @@
 [submodule "git-scratch"]
 	path = git-scratch
 	url = https://github.com/jsh/git-scratch.git
+[submodule "docker"]
+	path = docker
+	url = https://github.com/docker/docker.git
