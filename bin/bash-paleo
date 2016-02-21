@@ -11,3 +11,10 @@ done
 for i in $top; do
   grep -q $i <<< $CDPATH || CDPATH+=:$i
 done
+
+title() {
+  clear
+  printf "\n== $@ == \n\n"
+}
+
+pause() { read; }
