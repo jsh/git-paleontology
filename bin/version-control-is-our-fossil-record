@@ -1,18 +1,22 @@
 #!/bin/bash -eu
 
 PS4='[\T] '
-set -x
 
 [[ $(uname -s) = Darwin ]] && tac() { tail -r; }
-[ -d docker ] && rm -rf docker
 
-git clone -q https://github.com/docker/docker.git
-cd docker
+if ! [ -d docker ]; then
+  git clone -q https://github.com/docker/docker.git
+  cd docker
+else
+  cd docker
+  git pull -q
+fi
 
-set +x
+printf "\n== Docker's Fossil Record ==\n\n"
+
 git tag -l 'v*.0' | sort -Vr | while read i; do
   git log -1 --pretty=format:"%d: %x09%ar%n" $i
-done | sed 's/.*tag: v//; s/)://'
-set -x
+done | sed 's/.*tag: //; s/)//'
 
+echo
 exit 0
