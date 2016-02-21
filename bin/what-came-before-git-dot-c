@@ -1,20 +1,33 @@
 #!/bin/bash -eu
 
-PS4='[\T] '
-set -x
+source bash-paleo
+cd $top/git
 
+title "What Came Before 'git.c'?"
 git ls-tree --name-only $(git first git.c)^ | column # look! a git.sh
-git ls-tree --name-only $(git first git.sh)^ | column # and a git
-git ls-tree --name-only $(git first git)^ | column # and nothing
+pause
 
-set +x
+title "Before That?"
+git ls-tree --name-only $(git first git.sh)^ | column # and a git
+pause
+
+title "Before That?"
+git ls-tree --name-only $(git first git)^ | column # and nothing
+pause
+
+title "Summarizing the Firsts"
 for i in git.c git.sh git; do
   echo == $i ==
   git log -1 --pretty=format:%ad%x09%s $(git first $i)
 done
-echo "======== Here's what the first 'git' command looked like ==========="
+pause
+
+title "======== Here's what the first 'git' command looked like ==========="
 git show $(git first git):git # what did the first git look like?
-echo
+pause
+
+title "And Why Was It Created?"
 git log -1 $(git first git) # when and why did it appear?
 
+echo
 exit 0

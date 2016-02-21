@@ -1,10 +1,13 @@
 #!/bin/bash
 
-PS4='[\T] '
-set -x
+source bash-paleo
+cd $top/git
 
+title "When Did Git Get 'git'?"
 git log -- git.c | tail -47 # when did git.c appear?
+pause
 
+title "Making a New Subcommand: 'git first'"
 # make a new git subcommand
 cat << '__EOF__' > git-first
 #!/bin/bash
@@ -12,7 +15,12 @@ cat << '__EOF__' > git-first
 git log --oneline master -- $1 | tail -1 | cut -f1 -d' ' # SHA1 of first commit with file $1
 __EOF__
 install -D git-first ../bin
-git first git.c # first commit with git.c
-git first # even works without an arg
 
+echo 'git first git.c # first commit with git.c'
+git first git.c # first commit with git.c
+echo
+echo 'git log --oneline -1 $(git first git.c)'
+git log --oneline -1 $(git first git.c)
+
+echo
 exit 0

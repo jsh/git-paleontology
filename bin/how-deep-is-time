@@ -1,11 +1,19 @@
 #!/bin/bash -eu
 
 source bash-paleo
-PS4='[\T] '
-set -x
 
 cd $top/git
-git log --oneline master | wc -l # lots of commits
+
+title "> 10 Commits/Day"
+printf "%s commits\n" $(git log --oneline master | wc -l) # lots of commits
+pause
+
+title "The First Commits"
 git log --oneline master | tail  # here's the end
+pause
+
+title "Conventional Analysis of the First Commit ..."
 sloccount . # the most widely used COCOMO tool
+
+echo
 exit 0

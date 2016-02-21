@@ -18,3 +18,12 @@ title() {
 }
 
 pause() { read; }
+
+trace() {
+  if [[ $1 = off ]]; then
+    set +x
+  else
+    PS4='[\T] '
+    set -x
+  fi
+}
