@@ -2,12 +2,29 @@
 
 source bash-paleo
 PS4='[\T] '
-set -x
 
-cd $top/git; ls # our own copy of the fossil record
-find . -type f | wc -l # non-trivial software
-git log | wc -l # heaps of history
-git rev-list --all | tail -1  # all the SHA1s in master
-git checkout $(git rev-list --all | tail -1) # the oldest
+title "Git Today"
+cd $top/git; # our own copy of the fossil record
+git checkout -q master
+git pull -q
+ls
+pause
+
+title "Copious Code"
+printf "%s files\n" $(find . -type f | wc -l) # non-trivial software
+pause
+
+title "Heaps of History"
+printf "%s lines of logs\n" $(git log | wc -l) # heaps of history
+pause
+
+title "You Have Every Commit"
+git rev-list --all | tail # all the SHA1s in master
+pause
+
+title "Even the First"
+git checkout -q $(git rev-list --all | tail -1) # the oldest
 ls # Oooh.
+
+echo
 exit 0

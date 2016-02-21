@@ -2,7 +2,11 @@
 
 PS4='[\T] '
 
+source bash-paleo
+
 [[ $(uname -s) = Darwin ]] && tac() { tail -r; }
+
+cd $top
 
 if ! [ -d docker ]; then
   git clone -q https://github.com/docker/docker.git
@@ -12,7 +16,7 @@ else
   git pull -q
 fi
 
-printf "\n== Docker's Fossil Record ==\n\n"
+title "Docker's Fossil Record"
 
 git tag -l 'v*.0' | sort -Vr | while read i; do
   git log -1 --pretty=format:"%d: %x09%ar%n" $i

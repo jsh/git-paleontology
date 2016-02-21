@@ -4,21 +4,30 @@ source bash-paleo
 cd $top/git
 
 PS4='[\T] '
-set -x
 
 # Build the oldest
 
-git checkout devonian || git checkout -b devonian $(git rev-list --all | tail -1) # the oldest
+title "Build and Tag the Oldest Version"
+git checkout -q master
+git branch | grep -q devonian && git branch -Dq devonian
+git checkout -b devonian $(git rev-list --all | tail -1) # the oldest
+git tag -afm"The oldest commit" first/commit
 echo 'LIBS=-lcrypto -lz' >> Makefile # port to current Ubuntu
 make 2>/dev/null && echo "Success!"
-ls # what's here?
 git commit -am"Port first version to $(lsb_release -d | cut -f 2-)" # stash it away
+pause
+
+title "What's Here?"
+ls # what's here?
+pause
 
 # See where we are
 
+title "What's History Look Like?"
 git config --global alias.lol 'log --graph --decorate --oneline --all' # ease typing
 git lol -5 # you are here, in Oz
 echo '...'
 git lol | tail -5 # you started here, in Kansas
 
+echo
 exit 0
