@@ -1,7 +1,5 @@
 #!/bin/bash -eu
 
-PS4='[\T] '
-
 source bash-paleo
 
 [[ $(uname -s) = Darwin ]] && tac() { tail -r; }

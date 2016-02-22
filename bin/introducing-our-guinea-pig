@@ -1,12 +1,18 @@
 #!/bin/bash -eu
 
 source bash-paleo
-PS4='[\T] '
+
+cd $top
 
 title "Git Today"
-cd $top/git; # our own copy of the fossil record
-git checkout -q master
-git pull -q
+if ! [ -d git ]; then
+  git clone -q https://github.com/git/git.git
+  cd git
+else
+  cd git; # our own copy of the fossil record
+  git checkout -q master
+  git pull -q
+fi
 ls
 pause
 

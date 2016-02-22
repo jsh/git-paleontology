@@ -3,8 +3,6 @@
 source bash-paleo
 cd $top/git
 
-PS4='[\T] '
-
 # Build the oldest
 
 title "Build and Tag the Oldest Version"
