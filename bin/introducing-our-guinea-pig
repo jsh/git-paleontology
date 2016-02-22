@@ -26,7 +26,9 @@ printf "%s lines of logs\n" $(git log | wc -l) # heaps of history
 pause
 
 title "You Have Every Commit"
-git rev-list --all | tail # all the SHA1s in master
+git rev-list --all | nl | head -20 # all the SHA1s in master
+echo ...
+git rev-list --all | nl | tail -20 # all the SHA1s in master
 pause
 
 title "Even the First"
