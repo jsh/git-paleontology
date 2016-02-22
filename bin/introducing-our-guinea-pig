@@ -10,6 +10,7 @@ if ! [ -d git ]; then
   cd git
 else
   cd git; # our own copy of the fossil record
+  git clean -dfx
   git checkout -q master
   git pull -q
 fi

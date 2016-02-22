@@ -11,6 +11,8 @@ if ! [ -d docker ]; then
   cd docker
 else
   cd docker
+  git clean -dfx
+  git checkout -q master
   git pull -q
 fi
 
