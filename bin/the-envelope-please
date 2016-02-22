@@ -1,6 +1,9 @@
 #!/bin/bash -eu
 # cumulative commits per week
 
+source bash-paleo
+cd $top/git
+
 out=/tmp/$$
 mkdir -p $out
 trap 'rm -rf $out' EXIT
