@@ -15,6 +15,10 @@ cat << '__EOF__' > git-first
 git log --oneline master -- $1 | tail -1 | cut -f1 -d' ' # SHA1 of first commit with file $1
 __EOF__
 install -D git-first ../bin
+cat $(which git-first)
+pause
+
+title "And trying it out" 
 
 echo 'git first git.c # first commit with git.c'
 git first git.c # first commit with git.c

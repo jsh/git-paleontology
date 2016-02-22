@@ -4,7 +4,7 @@ source bash-paleo
 cd $top/git
 
 title "Who Commits to Git?"
-git clean -dfx
+git clean -qdfx
 git checkout -q master # get back, Jo-Jo
 git shortlog | tail -40 # who?
 pause
