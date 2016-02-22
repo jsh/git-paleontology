@@ -1,5 +1,5 @@
 #!/bin/bash -eu
-# sample sha1s
+# sample sha1s at constant intervals
 
 source bash-paleo
 
