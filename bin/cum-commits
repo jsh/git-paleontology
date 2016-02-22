@@ -8,11 +8,17 @@ out=/tmp/$$
 mkdir -p $out
 trap 'rm -rf $out' EXIT
 
-slices=${1:-../data/weekly.slc}
+if [[ "${1:-}" ]]; then
+  slices=$1
+  shift
+else
+  slices=../data/weekly.slc
+fi
+
 [[ -f $slices ]] || slicelist > $slices
 
 sort -s -k2 $slices > $out/wk-sha1	                    # week, commit
-git rev-list --reverse master | nl | sort -s -k2 > $out/n-sha1 # commit-number, commit
+git rev-list --reverse "$@" HEAD | nl | sort -s -k2 > $out/n-sha1 # commit-number, commit
 
 echo week commits                                                         # header, for graphing
 join -1 2 -2 2 $out/wk-sha1 $out/n-sha1 | cut -f2- -d' ' | sort -n	  # week, commit-number
