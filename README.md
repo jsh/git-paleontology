@@ -29,16 +29,27 @@ I supply
 [step-by-step instructions you can follow](https://github.com/jsh/git-paleontology/blob/master/talk/UsingGCE.md)
 to spin one up in the cloud, with Google Compute Engine.
 
-OS/X builds require installing openssl, and then need a `Makefile` tweak to let the build find its include files. 
+## Mac Builds:
+
+OS/X builds require
+
+- installing openssl
+- a `Makefile` tweak to let the build find its include files,
+- an environment-variable setting to keep the build from trying to drag in `gettext`.
 
 With Homebrew on my Mac, that meant this:
 
 ```
 brew install openssl
 echo 'CFLAGS+= -I/usr/local/Cellar/openssl/1.0.2e_1/include' >> Makefile
-make
+NO_GETTEXT=1 make
 ```
 
-I didn't start with a pristine Mac, so I don't know what a build-from-scratch would require.
-If you find more requirements, or write a script to install every required package on OS/X, 
-please send me a pull request.
+It didn't start with a pristine Mac, so I don't know what a build-from-scratch would require.
+Also, while this works for current versions of git, it won't work for the first version.
+
+If you figure out more about Mac builds, like how to build the first version
+or every package needed on a newly-acquired Mac, 
+please sent me the info.
+
+Better still, just fix this section and send me a pull request.
