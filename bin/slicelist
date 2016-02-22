@@ -1,0 +1,20 @@
+#!/bin/bash -eu
+# sample sha1s
+
+source bash-paleo
+
+datum() {
+  git log -1 --date=short --pretty=format:%ct $1
+}
+
+timeslice=$((7*24*60*60)) # seconds per week
+
+first_commit=$(git first)
+t0=$(datum $first_commit) # first commit, secs since epoch
+now=$(datum HEAD)       # now, seconds since epoch
+
+for ((sample=0, sec=$t0; sec<now ; sample+=1, sec+=$timeslice)); do
+  printf "$sample "
+  git rev-list -1  --before=$sec "${@:-HEAD}"
+done
+

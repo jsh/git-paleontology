@@ -1,24 +1,17 @@
 #!/bin/bash -eu
-# table of cumulative commits by week
+# cumulative commits per week
 
-PS4='[\T] '
+out=/tmp/$$
+mkdir -p $out
+trap 'rm -rf $out' EXIT
 
-final-commit-of-week() {                                          # weekly final commit
-  first_commit=$(git first)
-  t0=$(git log -1 --date=short --pretty=format:%ct $first_commit) # first commit, secs since epoch
-  now=$(git log -1 --date=short --pretty=format:%ct master)       # now, seconds since epoch
+slices=${1:-../data/weekly.slc}
+[[ -f $slices ]] || slicelist > $slices
 
-  spw=$((7*24*60*60)) # seconds per week
-  for ((wk=0, sec=$t0; sec<now ; wk+=1, sec+=spw)); do
-    printf "$wk "
-    git rev-list -1  --before=$sec master
-  done 
-}
+sort -s -k2 $slices > $out/wk-sha1	                    # week, commit
+git rev-list --reverse master | nl | sort -s -k2 > $out/n-sha1 # commit-number, commit
 
-final-commit-of-week | sort -k2 > W	          # week, commit
-git rev-list --reverse master | nl | sort -k2 > N # commit-number, commit
-
-echo week commits                                 # header, for R
-join -1 2 -2 2 W N | cut -f2- -d' ' | sort -n	  # week, commit-number
+echo week commits                                                         # header, for graphing
+join -1 2 -2 2 $out/wk-sha1 $out/n-sha1 | cut -f2- -d' ' | sort -n	  # week, commit-number
 
 exit 0
