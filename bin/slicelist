@@ -8,6 +8,7 @@ datum() {
 }
 
 timeslice=$((7*24*60*60)) # seconds per week
+timeslice=1
 
 first_commit=$(git first)
 t0=$(datum $first_commit) # first commit, secs since epoch

@@ -2,17 +2,27 @@
 # cumulative commits per week
 
 source bash-paleo
-cd $top/git
+#cd $top/git
 
-out=/tmp/$$
-mkdir -p $out
-trap 'rm -rf $out' EXIT
+outdir() {
+  if [[ "$1" ]]; then
+    out=$1
+  else
+    out=/tmp/$$
+    trap 'rm -rf $out' EXIT
+  fi
+  [[ -d $out ]] && rm -rf $out
+  mkdir -p $out
+}
+
+outdir /tmp/results
 
 if [[ "${1:-}" ]]; then
   slices=$1
   shift
 else
-  slices=../data/weekly.slc
+#  slices=../data/weekly.slc
+  slices=$out/slices
 fi
 
 [[ -f $slices ]] || slicelist > $slices
